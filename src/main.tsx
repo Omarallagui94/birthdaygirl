@@ -13,6 +13,7 @@ import {
   Clock3,
   Crown,
   Info,
+  LockKeyhole,
   Maximize,
   Menu,
   Music2,
@@ -29,9 +30,9 @@ import "./styles.css";
 
 const profiles = [
   ["Ahlem", Crown],
-  ["Best Friends", Sparkles],
-  ["Family", CakeSlice],
-  ["Special Memories", Clock3],
+  ["Omar", CircleUserRound],
+  ["Frea", CircleUserRound],
+  ["Jad", CircleUserRound],
 ];
 function Logo() {
   return (
@@ -81,14 +82,21 @@ function Profiles({ enter }: { enter: () => void }) {
             whileHover={{ y: -8 }}
             whileTap={{ scale: 0.94 }}
             onClick={() => (i ? setToast(true) : enter())}
-            className={i === 0 ? "featured" : ""}
+            className={i === 0 ? "featured" : "lockedProfile"}
+            aria-disabled={i > 0}
           >
             <div className={"avatar a" + i}>
               <I size={i === 0 ? 44 : 38} />
               {i === 0 && <span className="crown">♛</span>}
+              {i > 0 && (
+                <span className="profileLock" aria-hidden="true">
+                  <LockKeyhole size={18} />
+                </span>
+              )}
             </div>
             <span>{n as string}</span>
             {i === 0 && <small>MAIN CHARACTER</small>}
+            {i > 0 && <small className="lockedLabel">LOCKED</small>}
           </motion.button>
         ))}
       </div>
@@ -101,8 +109,8 @@ function Profiles({ enter }: { enter: () => void }) {
             exit={{ opacity: 0 }}
             onClick={() => setToast(false)}
           >
-            This profile is coming soon. Today, the Birthday Girl is the main
-            character. <X size={16} />
+            This profile is locked. Ahlem is the only main character today.{" "}
+            <X size={16} />
           </motion.div>
         )}
       </AnimatePresence>
