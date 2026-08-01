@@ -35,11 +35,7 @@ const profiles = [
   ["Jad", CircleUserRound],
 ];
 function Logo() {
-  return (
-    <div className="logo">
-      <span>H</span>ER STORY <small>Birthday original</small>
-    </div>
-  );
+  return <div className="netflixLogo">NETFLIX</div>;
 }
 function Intro({ done }: { done: () => void }) {
   return (
@@ -181,7 +177,7 @@ function Hero({ openVideo }: { openVideo: () => void }) {
         </p>
         <div className="meta">
           <b>98% adored</b>
-          <span>REPLACE: Birthday date</span>
+          <span>2 August</span>
           <i>100% Amazing</i>
         </div>
         <div className="heroBtns">
