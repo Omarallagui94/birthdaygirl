@@ -1,0 +1,14 @@
+node_modules/
+dist/
+.vite/
+*.log
+*.tsbuildinfo
+.DS_Store
+Thumbs.db
+pics/
+/*.mp3
+/*.mp4
+public/videos/featured-memory.mov
+.env
+.env.*
+!.env.example
