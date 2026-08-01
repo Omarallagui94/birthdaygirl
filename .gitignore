@@ -9,6 +9,7 @@ pics/
 /*.mp3
 /*.mp4
 public/videos/featured-memory.mov
+.tools/
 .env
 .env.*
 !.env.example
